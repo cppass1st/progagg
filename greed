@@ -1,0 +1,37 @@
+#include <iostream> 
+using namespace std;
+#include <cmath>
+
+int main()
+{
+    int years, y, payment;
+    float price, per, contr, sum, x, last_payment; 
+
+    cout << "Enter the price : "; cin >> price;
+    cout << "Enter the 1st contribution : "; cin >> contr;
+    cout << "Enter the number of years: "; cin >> years;
+    cout << "Enter percents: "; cin >> per;
+    y = years;
+    sum = 0.0;
+    x = 1 + per / 100;
+    price = price - contr;
+
+    while (y > 0) {
+        --y;
+        sum = sum + pow(x,y);
+    }
+    payment = round(((pow(x, years) * price)/sum)/10)*10;
+
+    price = price * x - payment;
+    cout << "1 year later your debt is " << price << " dollars." << endl;
+    for (int j=2; j < years; j++) {   
+        price = price * x-payment;
+        cout << j << " years later your debt is " << price << " dollars." << endl;
+    }
+    price = price * x;
+    last_payment = price;
+    cout << years << " years later your debt is 0" << " dollars." << endl;
+    cout << "Payment per year is " << payment << endl;
+    cout << "Last payment is " << last_payment << endl;
+    return 0;
+}
