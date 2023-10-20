@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct employee {
+    int number;
+    float salary;
+};
+
+int main()
+{
+    employee num1, num2, num3;
+    cin >> num1.number >> num1.salary;
+    cin >> num2.number >> num2.salary;
+    cin >> num3.number >> num3.salary;
+    cout << num1.number << "st employee has " << num1.salary << " salary.\n";
+    cout << num2.number << "nd employee has " << num2.salary << " salary.\n";
+    cout << num3.number << "rd employee has " << num3.salary << " salary.\n";
+    return 0;
+}
